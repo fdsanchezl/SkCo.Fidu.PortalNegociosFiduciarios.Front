@@ -1,0 +1,18 @@
+<div class="bg-dark">
+    <section class="content-modal">
+        <section class="close">
+            <button class="close-modal" (click)="closeModal(false)">X</button>
+        </section>
+        <div class="title">{{title}}</div><br>
+
+        <div class="content-info">
+            @for (item of detailInvoice; track $index) {
+                <div class="info">
+                    <div class="label">{{item.label}}</div>
+                    <div class="value">{{item.value}}</div>
+                </div>
+            }
+        </div>
+    </section>
+</div>
+

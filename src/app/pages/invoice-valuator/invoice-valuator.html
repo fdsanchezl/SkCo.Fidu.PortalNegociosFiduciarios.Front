@@ -1,0 +1,17 @@
+<div class="content-valuator">
+    <section class="title-valuator">
+        <div class="title">Valorador de facturas</div><br>
+        <div class="descrip">En este módulo podrá consultar al detalle todas las transacciones de recaudo realizadas a
+            un contrato en específico.</div><br>
+    </section>
+
+
+    <div class="flex flex-col md:flex-row gap-8">
+
+        <div class="md:w-3/3">
+            <ag-grid-angular [rowModelType]="'infinite'" [gridOptions]="gridOptions" [localeText]="localeText"
+                (gridReady)="onGridReady($event)">
+            </ag-grid-angular>
+        </div>
+    </div>
+</div>

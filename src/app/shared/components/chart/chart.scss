@@ -1,0 +1,96 @@
+.content-chart{
+    display: flex;
+    .content-wallet{
+        max-width: 30%;
+        width: 30%;
+        margin: 30px 0px;
+        .title{
+            color: var(--corporate-greySkandia-100);
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 32px;
+            letter-spacing: 0%;            
+        }
+        .total, .total-invoice{
+            background-color: var(--deepgray);
+            border-radius: 8px;
+            border: 1px solid var(--green-40);
+            padding: 24px;
+            max-width: 350px;
+            max-height: 112px;
+            gap: 10px;
+            margin: 25px 0px;
+        }
+        .total{
+            .type{
+                span{
+                    color: var(--green-sk);
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 24px;
+                    letter-spacing: 0%;
+                    text-align: right;
+                    vertical-align: middle;
+                }
+            }
+            .money{
+                color: var(--sk-gray3);
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 32px;
+                letter-spacing: 0%;
+                text-align: right;
+                vertical-align: middle;                
+            }
+        }
+        .total-invoice{
+            .type{
+                span{
+                    color: var(--green-sk);
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 24px;
+                    letter-spacing: 0%;
+                    text-align: right;
+                    vertical-align: middle;
+                }
+            }
+            .all-invoice{
+                color: var(--sk-gray3);
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 32px;
+                letter-spacing: 0%;
+                text-align: right;
+                vertical-align: middle;                
+            }
+        }   
+    }
+    .chart{
+            max-width: 70%;
+            width: 70%;
+        .contenido{
+            margin: 80px 0px 30px 0px;
+            max-width: 100%;
+            width: 100%;
+            background-color:var(--green-20);
+            border: 1px solid var(--green-60);
+            border-radius: 8px;
+            padding: 20px 20px 0px 20px;
+        } 
+        .header-chart{
+            span{
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 0%;
+            }
+        }
+        .chart-line{
+            height: 400px; 
+            width: 100%;
+            display: block;
+        }
+    }
+
+}
