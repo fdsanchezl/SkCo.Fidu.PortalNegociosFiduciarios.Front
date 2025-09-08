@@ -11,8 +11,6 @@
     background-color: var(--skandia-surface-primary);
     box-shadow: var(--skandia-shadow-subtle);
     border-bottom: 1px solid var(--skandia-gray-10);
-    box-shadow: var(--skandia-shadow-subtle);
-    border-bottom: 1px solid var(--skandia-gray-10);
     transition: left var(--layout-section-transition-duration);
     display: flex;
     align-items: center;
@@ -33,8 +31,6 @@
         font-weight: var(--skandia-h4-weight);
         gap: var(--skandia-spacing-sm);
         transition: color var(--skandia-transition-fast);
-        gap: var(--skandia-spacing-sm);
-        transition: color var(--skandia-transition-fast);
 
         svg {
             width: 3rem;
@@ -42,10 +38,6 @@
 
         &:focus-visible {
             @include focused();
-        }
-        
-        &:hover {
-            color: var(--skandia-green);
         }
         
         &:hover {
@@ -69,8 +61,6 @@
             background-color: var(--skandia-gray-11);
             color: var(--skandia-green);
             transform: translateY(-1px);
-            color: var(--skandia-green);
-            transform: translateY(-1px);
         }
 
         &:focus-visible {
@@ -83,7 +73,6 @@
 
         span {
             font-family: var(--skandia-font-body);
-            font-family: var(--skandia-font-body);
             font-size: 1rem;
             display: none;
         }
@@ -91,7 +80,6 @@
         &.layout-topbar-action-highlight {
             background: var(--skandia-gradient-green);
             color: var(--skandia-white);
-            box-shadow: var(--skandia-shadow-small);
             box-shadow: var(--skandia-shadow-small);
         }
     }

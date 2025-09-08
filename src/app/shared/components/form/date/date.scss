@@ -9,25 +9,7 @@
     box-shadow: var(--skandia-shadow-subtle);
     
     .date{
-    border-radius: var(--skandia-border-radius-md);
-    box-shadow: var(--skandia-shadow-subtle);
-    
-    .date{
         width: 20%;
-        font-family: var(--skandia-font-body);
-        font-size: var(--skandia-body1-size);
-        border: 2px solid var(--skandia-gray-10);
-        border-radius: var(--skandia-border-radius-md);
-        padding: var(--skandia-spacing-sm);
-        background-color: var(--skandia-surface-primary);
-        color: var(--skandia-text-primary);
-        transition: border-color var(--skandia-transition-fast);
-    }
-    
-    .date:focus {
-        outline: none;
-        border-color: var(--skandia-green);
-        box-shadow: 0 0 0 3px rgba(0, 200, 60, 0.1);
         font-family: var(--skandia-font-body);
         font-size: var(--skandia-body1-size);
         border: 2px solid var(--skandia-gray-10);

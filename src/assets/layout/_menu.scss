@@ -17,8 +17,6 @@
     padding: var(--skandia-spacing-sm) var(--skandia-spacing-lg);
     box-shadow: var(--skandia-shadow-subtle);
     border: 1px solid var(--skandia-gray-10);
-    box-shadow: var(--skandia-shadow-subtle);
-    border: 1px solid var(--skandia-gray-10);
 }
 
 .layout-menu {
@@ -30,12 +28,10 @@
         > .layout-menuitem-root-text {
             font-family: var(--skandia-font-body);
             font-size: var(--skandia-body3-size);
-            font-size: var(--skandia-body3-size);
             text-transform: uppercase;
             font-weight: 600;
             color: var(--skandia-green);
             margin: var(--skandia-spacing-md) 0;
-            letter-spacing: 0.5px;
             letter-spacing: 0.5px;
         }
 
@@ -46,8 +42,6 @@
 
     a {
         user-select: none;
-        font-family: var(--skandia-font-body);
-        transition: all var(--skandia-transition-fast);
         font-family: var(--skandia-font-body);
         transition: all var(--skandia-transition-fast);
 
@@ -82,9 +76,9 @@
             border-radius: var(--skandia-border-radius-md);
             transition: all var(--skandia-transition-fast);
             margin-bottom: var(--skandia-spacing-xs);
+
             .layout-menuitem-icon {
                 margin-right: var(--skandia-spacing-sm);
-                color: var(--skandia-green);
                 color: var(--skandia-green);
             }
 
@@ -100,15 +94,10 @@
                 background: var(--skandia-gradient-green);
                 color: var(--skandia-white);
                 box-shadow: var(--skandia-shadow-small);
-                background: var(--skandia-gradient-green);
-                color: var(--skandia-white);
-                box-shadow: var(--skandia-shadow-small);
             }
 
             &:hover {
                 background-color: var(--skandia-gray-12);
-                color: var(--skandia-green);
-                transform: translateX(4px);
                 color: var(--skandia-green);
                 transform: translateX(4px);
             }

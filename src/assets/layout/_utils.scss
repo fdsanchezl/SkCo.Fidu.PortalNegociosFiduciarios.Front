@@ -13,16 +13,9 @@
     box-shadow: var(--skandia-shadow-subtle);
     border: 1px solid var(--skandia-gray-10);
     transition: box-shadow var(--skandia-transition-normal);
-    box-shadow: var(--skandia-shadow-subtle);
-    border: 1px solid var(--skandia-gray-10);
-    transition: box-shadow var(--skandia-transition-normal);
 
     &:last-child {
         margin-bottom: 0;
-    }
-    
-    &:hover {
-        box-shadow: var(--skandia-shadow-small);
     }
     
     &:hover {

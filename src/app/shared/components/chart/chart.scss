@@ -25,11 +25,6 @@
         }
         .total:hover, .total-invoice:hover {
             box-shadow: var(--skandia-shadow-small);
-            box-shadow: var(--skandia-shadow-subtle);
-            transition: box-shadow var(--skandia-transition-normal);
-        }
-        .total:hover, .total-invoice:hover {
-            box-shadow: var(--skandia-shadow-small);
         }
         .total{
             .type{
@@ -88,7 +83,6 @@
             border-radius: var(--skandia-border-radius-lg);
             padding: var(--skandia-spacing-lg) var(--skandia-spacing-lg) 0px var(--skandia-spacing-lg);
             box-shadow: var(--skandia-shadow-subtle);
-            box-shadow: var(--skandia-shadow-subtle);
         } 
         .header-chart{
             span{
@@ -96,7 +90,6 @@
                 font-weight: var(--skandia-h5-weight);
                 font-size: var(--skandia-h5-size);
                 line-height: var(--skandia-h5-line-height);
-                color: var(--skandia-text-primary);
                 color: var(--skandia-text-primary);
             }
         }
