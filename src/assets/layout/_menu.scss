@@ -12,9 +12,11 @@
     transition:
         transform var(--layout-section-transition-duration),
         left var(--layout-section-transition-duration);
-    background-color: var(--surface-overlay);
-    border-radius: var(--content-border-radius);
-    padding: 0.5rem 1.5rem;
+    background-color: var(--skandia-surface-primary);
+    border-radius: var(--skandia-border-radius-lg);
+    padding: var(--skandia-spacing-sm) var(--skandia-spacing-lg);
+    box-shadow: var(--skandia-shadow-subtle);
+    border: 1px solid var(--skandia-gray-10);
 }
 
 .layout-menu {
@@ -24,11 +26,13 @@
 
     .layout-root-menuitem {
         > .layout-menuitem-root-text {
-            font-size: 0.857rem;
+            font-family: var(--skandia-font-body);
+            font-size: var(--skandia-body3-size);
             text-transform: uppercase;
-            font-weight: 700;
-            color: var(--text-color);
-            margin: 0.75rem 0;
+            font-weight: 600;
+            color: var(--skandia-green);
+            margin: var(--skandia-spacing-md) 0;
+            letter-spacing: 0.5px;
         }
 
         > a {
@@ -38,6 +42,8 @@
 
     a {
         user-select: none;
+        font-family: var(--skandia-font-body);
+        transition: all var(--skandia-transition-fast);
 
         &.active-menuitem {
             > .layout-submenu-toggler {
@@ -64,31 +70,36 @@
             align-items: center;
             position: relative;
             outline: 0 none;
-            color: var(--text-color);
+            color: var(--skandia-text-primary);
             cursor: pointer;
-            padding: 0.75rem 1rem;
-            border-radius: var(--content-border-radius);
-            transition:
-                background-color var(--element-transition-duration),
-                box-shadow var(--element-transition-duration);
+            padding: var(--skandia-spacing-md) var(--skandia-spacing-md);
+            border-radius: var(--skandia-border-radius-md);
+            transition: all var(--skandia-transition-fast);
+            margin-bottom: var(--skandia-spacing-xs);
 
             .layout-menuitem-icon {
-                margin-right: 0.5rem;
+                margin-right: var(--skandia-spacing-sm);
+                color: var(--skandia-green);
             }
 
             .layout-submenu-toggler {
                 font-size: 75%;
                 margin-left: auto;
-                transition: transform var(--element-transition-duration);
+                transition: transform var(--skandia-transition-fast);
             }
 
             &.active-route {
-                font-weight: 700;
-                color: var(--primary-color);
+                font-weight: 600;
+                color: var(--skandia-green);
+                background: var(--skandia-gradient-green);
+                color: var(--skandia-white);
+                box-shadow: var(--skandia-shadow-small);
             }
 
             &:hover {
-                background-color: var(--surface-hover);
+                background-color: var(--skandia-gray-12);
+                color: var(--skandia-green);
+                transform: translateX(4px);
             }
 
             &:focus {

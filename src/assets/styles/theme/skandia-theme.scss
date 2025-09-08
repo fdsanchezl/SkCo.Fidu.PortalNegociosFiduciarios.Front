@@ -1,0 +1,349 @@
+/* 
+ * Skandia Brand Theme Variables
+ * Implementación de los lineamientos de marca de Skandia
+ */
+
+:root {
+  /* 🎨 Paleta de colores primarios */
+  --skandia-green: #00C83C;
+  --skandia-gray: #3F3F3F;
+  --skandia-white: #FFFFFF;
+
+  /* 🎨 Colores secundarios */
+  --skandia-orange: #F29F05;
+  --skandia-blue: #02B1FF;
+
+  /* 🎨 Escala de grises */
+  --skandia-black-1: #000000;
+  --skandia-gray-1: #363636;
+  --skandia-gray-2: #444444;
+  --skandia-gray-3: #565656;
+  --skandia-gray-4: #666666;
+  --skandia-gray-5: #878787;
+  --skandia-gray-6: #A5A5A5;
+  --skandia-gray-7: #B7B7B7;
+  --skandia-gray-8: #C4C7C4;
+  --skandia-gray-9: #D8D8D8;
+  --skandia-gray-10: #DEDEDE;
+  --skandia-gray-11: #EDEDED;
+  --skandia-gray-12: #FAFAFA;
+
+  /* 🌈 Degradados principales */
+  --skandia-gradient-green: linear-gradient(90deg, #03A835, #CAF9CB);
+  --skandia-gradient-orange: linear-gradient(90deg, #E68603, #FFE6D2);
+  --skandia-gradient-blue: linear-gradient(90deg, #0099DE, #C0F3FF);
+
+  /* 🌑 Sombras */
+  --skandia-shadow-small: 0px 2px 6px rgba(0, 0, 0, 0.25);
+  --skandia-shadow-medium: 0px 12px 20px rgba(0, 0, 0, 0.25);
+  --skandia-shadow-subtle: 0px 1px 3px rgba(0, 0, 0, 0.15);
+
+  /* ✍️ Tipografías */
+  --skandia-font-heading: 'Montserrat', sans-serif;
+  --skandia-font-body: 'Open Sans', sans-serif;
+
+  /* Tamaños de fuente para títulos */
+  --skandia-h1-size: 2.5rem;
+  --skandia-h1-weight: 700;
+  --skandia-h1-line-height: 1.2;
+
+  --skandia-h2-size: 2rem;
+  --skandia-h2-weight: 600;
+  --skandia-h2-line-height: 1.3;
+
+  --skandia-h3-size: 1.75rem;
+  --skandia-h3-weight: 600;
+  --skandia-h3-line-height: 1.4;
+
+  --skandia-h4-size: 1.5rem;
+  --skandia-h4-weight: 500;
+  --skandia-h4-line-height: 1.4;
+
+  --skandia-h5-size: 1.25rem;
+  --skandia-h5-weight: 500;
+  --skandia-h5-line-height: 1.5;
+
+  --skandia-h6-size: 1rem;
+  --skandia-h6-weight: 500;
+  --skandia-h6-line-height: 1.5;
+
+  /* Tamaños de fuente para cuerpo */
+  --skandia-body1-size: 16px;
+  --skandia-body1-weight: 400;
+  --skandia-body1-line-height: 1.5;
+
+  --skandia-body2-size: 14px;
+  --skandia-body2-weight: 400;
+  --skandia-body2-line-height: 1.5;
+
+  --skandia-body3-size: 12px;
+  --skandia-body3-weight: 400;
+  --skandia-body3-line-height: 1.4;
+
+  --skandia-body4-size: 10px;
+  --skandia-body4-weight: 400;
+  --skandia-body4-line-height: 1.4;
+
+  /* Espaciado consistente */
+  --skandia-spacing-xs: 4px;
+  --skandia-spacing-sm: 8px;
+  --skandia-spacing-md: 16px;
+  --skandia-spacing-lg: 24px;
+  --skandia-spacing-xl: 32px;
+  --skandia-spacing-2xl: 48px;
+
+  /* Border radius */
+  --skandia-border-radius-sm: 4px;
+  --skandia-border-radius-md: 8px;
+  --skandia-border-radius-lg: 12px;
+  --skandia-border-radius-xl: 16px;
+
+  /* Transiciones */
+  --skandia-transition-fast: 0.15s ease-in-out;
+  --skandia-transition-normal: 0.3s ease-in-out;
+  --skandia-transition-slow: 0.5s ease-in-out;
+}
+
+/* 🌑 Modo oscuro - Ajustes para Skandia */
+:root[class*='app-dark'] {
+  --skandia-surface-primary: var(--skandia-gray-2);
+  --skandia-surface-secondary: var(--skandia-gray-1);
+  --skandia-text-primary: var(--skandia-white);
+  --skandia-text-secondary: var(--skandia-gray-11);
+}
+
+/* 🌞 Modo claro */
+:root:not([class*='app-dark']) {
+  --skandia-surface-primary: var(--skandia-white);
+  --skandia-surface-secondary: var(--skandia-gray-12);
+  --skandia-text-primary: var(--skandia-gray-1);
+  --skandia-text-secondary: var(--skandia-gray-3);
+}
+
+/* ✍️ Aplicación de tipografías */
+h1, .skandia-h1 {
+  font-family: var(--skandia-font-heading);
+  font-size: var(--skandia-h1-size);
+  font-weight: var(--skandia-h1-weight);
+  line-height: var(--skandia-h1-line-height);
+  color: var(--skandia-text-primary);
+  margin-bottom: var(--skandia-spacing-lg);
+}
+
+h2, .skandia-h2 {
+  font-family: var(--skandia-font-heading);
+  font-size: var(--skandia-h2-size);
+  font-weight: var(--skandia-h2-weight);
+  line-height: var(--skandia-h2-line-height);
+  color: var(--skandia-text-primary);
+  margin-bottom: var(--skandia-spacing-md);
+}
+
+h3, .skandia-h3 {
+  font-family: var(--skandia-font-heading);
+  font-size: var(--skandia-h3-size);
+  font-weight: var(--skandia-h3-weight);
+  line-height: var(--skandia-h3-line-height);
+  color: var(--skandia-text-primary);
+  margin-bottom: var(--skandia-spacing-md);
+}
+
+h4, .skandia-h4 {
+  font-family: var(--skandia-font-heading);
+  font-size: var(--skandia-h4-size);
+  font-weight: var(--skandia-h4-weight);
+  line-height: var(--skandia-h4-line-height);
+  color: var(--skandia-text-primary);
+  margin-bottom: var(--skandia-spacing-sm);
+}
+
+h5, .skandia-h5 {
+  font-family: var(--skandia-font-heading);
+  font-size: var(--skandia-h5-size);
+  font-weight: var(--skandia-h5-weight);
+  line-height: var(--skandia-h5-line-height);
+  color: var(--skandia-text-primary);
+  margin-bottom: var(--skandia-spacing-sm);
+}
+
+h6, .skandia-h6 {
+  font-family: var(--skandia-font-heading);
+  font-size: var(--skandia-h6-size);
+  font-weight: var(--skandia-h6-weight);
+  line-height: var(--skandia-h6-line-height);
+  color: var(--skandia-text-primary);
+  margin-bottom: var(--skandia-spacing-sm);
+}
+
+/* Clases de utilidad para cuerpo de texto */
+.skandia-body1 {
+  font-family: var(--skandia-font-body);
+  font-size: var(--skandia-body1-size);
+  font-weight: var(--skandia-body1-weight);
+  line-height: var(--skandia-body1-line-height);
+  color: var(--skandia-text-primary);
+}
+
+.skandia-body2 {
+  font-family: var(--skandia-font-body);
+  font-size: var(--skandia-body2-size);
+  font-weight: var(--skandia-body2-weight);
+  line-height: var(--skandia-body2-line-height);
+  color: var(--skandia-text-secondary);
+}
+
+.skandia-body3 {
+  font-family: var(--skandia-font-body);
+  font-size: var(--skandia-body3-size);
+  font-weight: var(--skandia-body3-weight);
+  line-height: var(--skandia-body3-line-height);
+  color: var(--skandia-text-secondary);
+}
+
+.skandia-body4 {
+  font-family: var(--skandia-font-body);
+  font-size: var(--skandia-body4-size);
+  font-weight: var(--skandia-body4-weight);
+  line-height: var(--skandia-body4-line-height);
+  color: var(--skandia-text-secondary);
+}
+
+/* 🎨 Clases de utilidad para colores */
+.skandia-bg-primary { background-color: var(--skandia-green); }
+.skandia-bg-secondary { background-color: var(--skandia-gray); }
+.skandia-bg-orange { background-color: var(--skandia-orange); }
+.skandia-bg-blue { background-color: var(--skandia-blue); }
+
+.skandia-text-primary { color: var(--skandia-text-primary); }
+.skandia-text-secondary { color: var(--skandia-text-secondary); }
+.skandia-text-green { color: var(--skandia-green); }
+.skandia-text-orange { color: var(--skandia-orange); }
+.skandia-text-blue { color: var(--skandia-blue); }
+
+/* 🌈 Clases para degradados */
+.skandia-gradient-green { background: var(--skandia-gradient-green); }
+.skandia-gradient-orange { background: var(--skandia-gradient-orange); }
+.skandia-gradient-blue { background: var(--skandia-gradient-blue); }
+
+/* 🌑 Clases para sombras */
+.skandia-shadow-small { box-shadow: var(--skandia-shadow-small); }
+.skandia-shadow-medium { box-shadow: var(--skandia-shadow-medium); }
+.skandia-shadow-subtle { box-shadow: var(--skandia-shadow-subtle); }
+
+/* 🔧 Componentes base con estilo Skandia */
+.skandia-card {
+  background-color: var(--skandia-surface-primary);
+  border-radius: var(--skandia-border-radius-lg);
+  padding: var(--skandia-spacing-lg);
+  box-shadow: var(--skandia-shadow-subtle);
+  border: 1px solid var(--skandia-gray-10);
+  transition: box-shadow var(--skandia-transition-normal);
+}
+
+.skandia-card:hover {
+  box-shadow: var(--skandia-shadow-medium);
+}
+
+.skandia-button-primary {
+  background: var(--skandia-gradient-green);
+  color: var(--skandia-white);
+  border: none;
+  border-radius: var(--skandia-border-radius-md);
+  padding: var(--skandia-spacing-sm) var(--skandia-spacing-lg);
+  font-family: var(--skandia-font-body);
+  font-weight: 500;
+  font-size: var(--skandia-body1-size);
+  cursor: pointer;
+  transition: all var(--skandia-transition-fast);
+  box-shadow: var(--skandia-shadow-subtle);
+}
+
+.skandia-button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--skandia-shadow-medium);
+}
+
+.skandia-button-secondary {
+  background: transparent;
+  color: var(--skandia-green);
+  border: 2px solid var(--skandia-green);
+  border-radius: var(--skandia-border-radius-md);
+  padding: var(--skandia-spacing-sm) var(--skandia-spacing-lg);
+  font-family: var(--skandia-font-body);
+  font-weight: 500;
+  font-size: var(--skandia-body1-size);
+  cursor: pointer;
+  transition: all var(--skandia-transition-fast);
+}
+
+.skandia-button-secondary:hover {
+  background-color: var(--skandia-green);
+  color: var(--skandia-white);
+  transform: translateY(-1px);
+  box-shadow: var(--skandia-shadow-small);
+}
+
+.skandia-input {
+  border: 2px solid var(--skandia-gray-10);
+  border-radius: var(--skandia-border-radius-md);
+  padding: var(--skandia-spacing-sm) var(--skandia-spacing-md);
+  font-family: var(--skandia-font-body);
+  font-size: var(--skandia-body1-size);
+  background-color: var(--skandia-surface-primary);
+  color: var(--skandia-text-primary);
+  transition: border-color var(--skandia-transition-fast);
+}
+
+.skandia-input:focus {
+  outline: none;
+  border-color: var(--skandia-green);
+  box-shadow: 0 0 0 3px rgba(0, 200, 60, 0.1);
+}
+
+.skandia-modal {
+  background-color: var(--skandia-surface-primary);
+  border-radius: var(--skandia-border-radius-xl);
+  box-shadow: var(--skandia-shadow-medium);
+  border: 1px solid var(--skandia-gray-10);
+}
+
+/* 🎯 Aplicación específica para el proyecto */
+body {
+  font-family: var(--skandia-font-body);
+  color: var(--skandia-text-primary);
+  background-color: var(--skandia-surface-secondary);
+}
+
+/* Sobrescribir variables de PrimeNG con colores de Skandia */
+:root {
+  --p-primary-color: var(--skandia-green);
+  --p-primary-contrast-color: var(--skandia-white);
+  --p-surface-0: var(--skandia-white);
+  --p-surface-50: var(--skandia-gray-12);
+  --p-surface-100: var(--skandia-gray-11);
+  --p-surface-200: var(--skandia-gray-10);
+  --p-surface-300: var(--skandia-gray-9);
+  --p-surface-400: var(--skandia-gray-8);
+  --p-surface-500: var(--skandia-gray-7);
+  --p-surface-600: var(--skandia-gray-6);
+  --p-surface-700: var(--skandia-gray-5);
+  --p-surface-800: var(--skandia-gray-4);
+  --p-surface-900: var(--skandia-gray-3);
+  --p-surface-950: var(--skandia-gray-2);
+}
+
+/* Modo oscuro para Skandia */
+:root[class*='app-dark'] {
+  --p-surface-0: var(--skandia-gray-2);
+  --p-surface-50: var(--skandia-gray-3);
+  --p-surface-100: var(--skandia-gray-4);
+  --p-surface-200: var(--skandia-gray-5);
+  --p-surface-300: var(--skandia-gray-6);
+  --p-surface-400: var(--skandia-gray-7);
+  --p-surface-500: var(--skandia-gray-8);
+  --p-surface-600: var(--skandia-gray-9);
+  --p-surface-700: var(--skandia-gray-10);
+  --p-surface-800: var(--skandia-gray-11);
+  --p-surface-900: var(--skandia-gray-12);
+  --p-surface-950: var(--skandia-white);
+}

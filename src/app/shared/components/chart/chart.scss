@@ -5,40 +5,45 @@
         width: 30%;
         margin: 30px 0px;
         .title{
-            color: var(--corporate-greySkandia-100);
-            font-weight: 700;
-            font-size: 24px;
-            line-height: 32px;
-            letter-spacing: 0%;            
+            font-family: var(--skandia-font-heading);
+            color: var(--skandia-text-primary);
+            font-weight: var(--skandia-h3-weight);
+            font-size: var(--skandia-h3-size);
+            line-height: var(--skandia-h3-line-height);
         }
         .total, .total-invoice{
-            background-color: var(--deepgray);
-            border-radius: 8px;
-            border: 1px solid var(--green-40);
-            padding: 24px;
+            background-color: var(--skandia-surface-primary);
+            border-radius: var(--skandia-border-radius-lg);
+            border: 1px solid var(--skandia-green);
+            padding: var(--skandia-spacing-lg);
             max-width: 350px;
             max-height: 112px;
-            gap: 10px;
-            margin: 25px 0px;
+            gap: var(--skandia-spacing-sm);
+            margin: var(--skandia-spacing-lg) 0px;
+            box-shadow: var(--skandia-shadow-subtle);
+            transition: box-shadow var(--skandia-transition-normal);
+        }
+        .total:hover, .total-invoice:hover {
+            box-shadow: var(--skandia-shadow-small);
         }
         .total{
             .type{
                 span{
-                    color: var(--green-sk);
-                    font-weight: 500;
-                    font-size: 16px;
-                    line-height: 24px;
-                    letter-spacing: 0%;
+                    color: var(--skandia-green);
+                    font-family: var(--skandia-font-body);
+                    font-weight: var(--skandia-body1-weight);
+                    font-size: var(--skandia-body1-size);
+                    line-height: var(--skandia-body1-line-height);
                     text-align: right;
                     vertical-align: middle;
                 }
             }
             .money{
-                color: var(--sk-gray3);
-                font-weight: 700;
-                font-size: 24px;
-                line-height: 32px;
-                letter-spacing: 0%;
+                color: var(--skandia-text-primary);
+                font-family: var(--skandia-font-heading);
+                font-weight: var(--skandia-h3-weight);
+                font-size: var(--skandia-h3-size);
+                line-height: var(--skandia-h3-line-height);
                 text-align: right;
                 vertical-align: middle;                
             }
@@ -46,21 +51,21 @@
         .total-invoice{
             .type{
                 span{
-                    color: var(--green-sk);
-                    font-weight: 500;
-                    font-size: 16px;
-                    line-height: 24px;
-                    letter-spacing: 0%;
+                    color: var(--skandia-green);
+                    font-family: var(--skandia-font-body);
+                    font-weight: var(--skandia-body1-weight);
+                    font-size: var(--skandia-body1-size);
+                    line-height: var(--skandia-body1-line-height);
                     text-align: right;
                     vertical-align: middle;
                 }
             }
             .all-invoice{
-                color: var(--sk-gray3);
-                font-weight: 700;
-                font-size: 24px;
-                line-height: 32px;
-                letter-spacing: 0%;
+                color: var(--skandia-text-primary);
+                font-family: var(--skandia-font-heading);
+                font-weight: var(--skandia-h3-weight);
+                font-size: var(--skandia-h3-size);
+                line-height: var(--skandia-h3-line-height);
                 text-align: right;
                 vertical-align: middle;                
             }
@@ -70,20 +75,22 @@
             max-width: 70%;
             width: 70%;
         .contenido{
-            margin: 80px 0px 30px 0px;
+            margin: var(--skandia-spacing-2xl) 0px var(--skandia-spacing-xl) 0px;
             max-width: 100%;
             width: 100%;
-            background-color:var(--green-20);
-            border: 1px solid var(--green-60);
-            border-radius: 8px;
-            padding: 20px 20px 0px 20px;
+            background: var(--skandia-gradient-green);
+            border: 1px solid var(--skandia-green);
+            border-radius: var(--skandia-border-radius-lg);
+            padding: var(--skandia-spacing-lg) var(--skandia-spacing-lg) 0px var(--skandia-spacing-lg);
+            box-shadow: var(--skandia-shadow-subtle);
         } 
         .header-chart{
             span{
-                font-weight: 700;
-                font-size: 16px;
-                line-height: 24px;
-                letter-spacing: 0%;
+                font-family: var(--skandia-font-heading);
+                font-weight: var(--skandia-h5-weight);
+                font-size: var(--skandia-h5-size);
+                line-height: var(--skandia-h5-line-height);
+                color: var(--skandia-text-primary);
             }
         }
         .chart-line{

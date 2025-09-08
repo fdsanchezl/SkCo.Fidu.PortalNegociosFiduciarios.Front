@@ -8,7 +8,9 @@
     top: 0;
     width: 100%;
     padding: 0 2rem;
-    background-color: var(--surface-card);
+    background-color: var(--skandia-surface-primary);
+    box-shadow: var(--skandia-shadow-subtle);
+    border-bottom: 1px solid var(--skandia-gray-10);
     transition: left var(--layout-section-transition-duration);
     display: flex;
     align-items: center;
@@ -22,11 +24,13 @@
     .layout-topbar-logo {
         display: inline-flex;
         align-items: center;
-        font-size: 1.5rem;
-        border-radius: var(--content-border-radius);
-        color: var(--text-color);
-        font-weight: 500;
-        gap: 0.5rem;
+        font-family: var(--skandia-font-heading);
+        font-size: var(--skandia-h4-size);
+        border-radius: var(--skandia-border-radius-md);
+        color: var(--skandia-text-primary);
+        font-weight: var(--skandia-h4-weight);
+        gap: var(--skandia-spacing-sm);
+        transition: color var(--skandia-transition-fast);
 
         svg {
             width: 3rem;
@@ -35,22 +39,28 @@
         &:focus-visible {
             @include focused();
         }
+        
+        &:hover {
+            color: var(--skandia-green);
+        }
     }
 
     .layout-topbar-action {
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        color: var(--text-color-secondary);
+        color: var(--skandia-text-secondary);
         border-radius: 50%;
         width: 2.5rem;
         height: 2.5rem;
-        color: var(--text-color);
-        transition: background-color var(--element-transition-duration);
+        color: var(--skandia-text-primary);
+        transition: all var(--skandia-transition-fast);
         cursor: pointer;
 
         &:hover {
-            background-color: var(--surface-hover);
+            background-color: var(--skandia-gray-11);
+            color: var(--skandia-green);
+            transform: translateY(-1px);
         }
 
         &:focus-visible {
@@ -62,13 +72,15 @@
         }
 
         span {
+            font-family: var(--skandia-font-body);
             font-size: 1rem;
             display: none;
         }
 
         &.layout-topbar-action-highlight {
-            background-color: var(--primary-color);
-            color: var(--primary-contrast-color);
+            background: var(--skandia-gradient-green);
+            color: var(--skandia-white);
+            box-shadow: var(--skandia-shadow-small);
         }
     }
 

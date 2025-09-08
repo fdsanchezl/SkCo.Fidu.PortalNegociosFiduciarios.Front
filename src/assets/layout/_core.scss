@@ -4,19 +4,25 @@ html {
 }
 
 body {
-    font-family: 'Lato', sans-serif;
-    color: var(--text-color);
-    background-color: var(--surface-ground);
+    font-family: var(--skandia-font-body);
+    color: var(--skandia-text-primary);
+    background-color: var(--skandia-surface-secondary);
     margin: 0;
     padding: 0;
     min-height: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    line-height: 1.2;
+    line-height: var(--skandia-body1-line-height);
 }
 
 a {
     text-decoration: none;
+    color: var(--skandia-green);
+    transition: color var(--skandia-transition-fast);
+}
+
+a:hover {
+    color: var(--skandia-blue);
 }
 
 .layout-wrapper {
