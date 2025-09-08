@@ -23,6 +23,12 @@ a {
 
 a:hover {
     color: var(--skandia-blue);
+    color: var(--skandia-green);
+    transition: color var(--skandia-transition-fast);
+}
+
+a:hover {
+    color: var(--skandia-blue);
 }
 
 .layout-wrapper {

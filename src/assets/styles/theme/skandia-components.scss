@@ -1,0 +1,246 @@
+/* 
+ * Skandia Components Styles
+ * Estilos específicos para componentes con la marca Skandia
+ */
+
+/* 🎯 Botones personalizados */
+.p-button.skandia-primary {
+  background: var(--skandia-gradient-green);
+  border: none;
+  color: var(--skandia-white);
+  font-family: var(--skandia-font-body);
+  font-weight: 500;
+  border-radius: var(--skandia-border-radius-md);
+  box-shadow: var(--skandia-shadow-subtle);
+  transition: all var(--skandia-transition-fast);
+}
+
+.p-button.skandia-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--skandia-shadow-medium);
+}
+
+.p-button.skandia-secondary {
+  background: transparent;
+  border: 2px solid var(--skandia-green);
+  color: var(--skandia-green);
+  font-family: var(--skandia-font-body);
+  font-weight: 500;
+  border-radius: var(--skandia-border-radius-md);
+  transition: all var(--skandia-transition-fast);
+}
+
+.p-button.skandia-secondary:hover {
+  background-color: var(--skandia-green);
+  color: var(--skandia-white);
+  transform: translateY(-1px);
+  box-shadow: var(--skandia-shadow-small);
+}
+
+/* 🎯 Inputs personalizados */
+.p-inputtext.skandia-input,
+.p-textarea.skandia-input,
+.p-dropdown.skandia-input {
+  border: 2px solid var(--skandia-gray-10);
+  border-radius: var(--skandia-border-radius-md);
+  font-family: var(--skandia-font-body);
+  background-color: var(--skandia-surface-primary);
+  color: var(--skandia-text-primary);
+  transition: all var(--skandia-transition-fast);
+}
+
+.p-inputtext.skandia-input:focus,
+.p-textarea.skandia-input:focus,
+.p-dropdown.skandia-input:focus {
+  border-color: var(--skandia-green);
+  box-shadow: 0 0 0 3px rgba(0, 200, 60, 0.1);
+}
+
+/* 🎯 Tablas personalizadas */
+.p-datatable.skandia-table {
+  border-radius: var(--skandia-border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--skandia-shadow-subtle);
+}
+
+.p-datatable.skandia-table .p-datatable-header {
+  background: var(--skandia-gradient-green);
+  color: var(--skandia-white);
+  font-family: var(--skandia-font-heading);
+  font-weight: 600;
+  border: none;
+}
+
+.p-datatable.skandia-table .p-datatable-thead > tr > th {
+  background-color: var(--skandia-gray-12);
+  color: var(--skandia-text-primary);
+  font-family: var(--skandia-font-body);
+  font-weight: 600;
+  border-bottom: 2px solid var(--skandia-green);
+}
+
+.p-datatable.skandia-table .p-datatable-tbody > tr {
+  transition: background-color var(--skandia-transition-fast);
+}
+
+.p-datatable.skandia-table .p-datatable-tbody > tr:hover {
+  background-color: var(--skandia-gray-12);
+}
+
+.p-datatable.skandia-table .p-datatable-tbody > tr:nth-child(even) {
+  background-color: var(--skandia-surface-secondary);
+}
+
+/* 🎯 Modales personalizados */
+.p-dialog.skandia-modal .p-dialog-content {
+  background-color: var(--skandia-surface-primary);
+  border-radius: var(--skandia-border-radius-xl);
+  box-shadow: var(--skandia-shadow-medium);
+}
+
+.p-dialog.skandia-modal .p-dialog-header {
+  background: var(--skandia-gradient-green);
+  color: var(--skandia-white);
+  font-family: var(--skandia-font-heading);
+  font-weight: 600;
+  border-radius: var(--skandia-border-radius-xl) var(--skandia-border-radius-xl) 0 0;
+}
+
+/* 🎯 Tarjetas personalizadas */
+.skandia-card-primary {
+  background: var(--skandia-gradient-green);
+  color: var(--skandia-white);
+  border-radius: var(--skandia-border-radius-lg);
+  padding: var(--skandia-spacing-lg);
+  box-shadow: var(--skandia-shadow-medium);
+  transition: transform var(--skandia-transition-normal);
+}
+
+.skandia-card-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--skandia-shadow-medium);
+}
+
+.skandia-card-secondary {
+  background-color: var(--skandia-surface-primary);
+  border: 2px solid var(--skandia-green);
+  border-radius: var(--skandia-border-radius-lg);
+  padding: var(--skandia-spacing-lg);
+  box-shadow: var(--skandia-shadow-subtle);
+  transition: all var(--skandia-transition-normal);
+}
+
+.skandia-card-secondary:hover {
+  border-color: var(--skandia-blue);
+  box-shadow: var(--skandia-shadow-small);
+}
+
+/* 🎯 Navegación personalizada */
+.skandia-nav-item {
+  font-family: var(--skandia-font-body);
+  font-weight: 500;
+  color: var(--skandia-text-primary);
+  padding: var(--skandia-spacing-sm) var(--skandia-spacing-md);
+  border-radius: var(--skandia-border-radius-md);
+  transition: all var(--skandia-transition-fast);
+  text-decoration: none;
+}
+
+.skandia-nav-item:hover {
+  background-color: var(--skandia-gray-12);
+  color: var(--skandia-green);
+  transform: translateY(-1px);
+}
+
+.skandia-nav-item.active {
+  background: var(--skandia-gradient-green);
+  color: var(--skandia-white);
+  box-shadow: var(--skandia-shadow-small);
+}
+
+/* 🎯 Badges y tags */
+.skandia-badge {
+  background: var(--skandia-gradient-green);
+  color: var(--skandia-white);
+  font-family: var(--skandia-font-body);
+  font-size: var(--skandia-body3-size);
+  font-weight: 600;
+  padding: var(--skandia-spacing-xs) var(--skandia-spacing-sm);
+  border-radius: var(--skandia-border-radius-sm);
+  box-shadow: var(--skandia-shadow-subtle);
+}
+
+.skandia-badge.orange {
+  background: var(--skandia-gradient-orange);
+}
+
+.skandia-badge.blue {
+  background: var(--skandia-gradient-blue);
+}
+
+/* 🎯 Formularios */
+.skandia-form-group {
+  margin-bottom: var(--skandia-spacing-lg);
+}
+
+.skandia-form-label {
+  font-family: var(--skandia-font-body);
+  font-size: var(--skandia-body2-size);
+  font-weight: 600;
+  color: var(--skandia-text-primary);
+  margin-bottom: var(--skandia-spacing-xs);
+  display: block;
+}
+
+.skandia-form-error {
+  font-family: var(--skandia-font-body);
+  font-size: var(--skandia-body3-size);
+  color: #dc2626;
+  margin-top: var(--skandia-spacing-xs);
+}
+
+/* 🎯 Alertas y notificaciones */
+.skandia-alert {
+  border-radius: var(--skandia-border-radius-md);
+  padding: var(--skandia-spacing-md);
+  font-family: var(--skandia-font-body);
+  font-size: var(--skandia-body1-size);
+  margin-bottom: var(--skandia-spacing-md);
+}
+
+.skandia-alert.success {
+  background-color: rgba(0, 200, 60, 0.1);
+  border-left: 4px solid var(--skandia-green);
+  color: var(--skandia-green);
+}
+
+.skandia-alert.warning {
+  background-color: rgba(242, 159, 5, 0.1);
+  border-left: 4px solid var(--skandia-orange);
+  color: var(--skandia-orange);
+}
+
+.skandia-alert.info {
+  background-color: rgba(2, 177, 255, 0.1);
+  border-left: 4px solid var(--skandia-blue);
+  color: var(--skandia-blue);
+}
+
+/* 🎯 Utilidades de espaciado */
+.skandia-mt-xs { margin-top: var(--skandia-spacing-xs); }
+.skandia-mt-sm { margin-top: var(--skandia-spacing-sm); }
+.skandia-mt-md { margin-top: var(--skandia-spacing-md); }
+.skandia-mt-lg { margin-top: var(--skandia-spacing-lg); }
+.skandia-mt-xl { margin-top: var(--skandia-spacing-xl); }
+
+.skandia-mb-xs { margin-bottom: var(--skandia-spacing-xs); }
+.skandia-mb-sm { margin-bottom: var(--skandia-spacing-sm); }
+.skandia-mb-md { margin-bottom: var(--skandia-spacing-md); }
+.skandia-mb-lg { margin-bottom: var(--skandia-spacing-lg); }
+.skandia-mb-xl { margin-bottom: var(--skandia-spacing-xl); }
+
+.skandia-p-xs { padding: var(--skandia-spacing-xs); }
+.skandia-p-sm { padding: var(--skandia-spacing-sm); }
+.skandia-p-md { padding: var(--skandia-spacing-md); }
+.skandia-p-lg { padding: var(--skandia-spacing-lg); }
+.skandia-p-xl { padding: var(--skandia-spacing-xl); }

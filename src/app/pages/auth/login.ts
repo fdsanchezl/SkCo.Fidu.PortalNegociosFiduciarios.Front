@@ -24,25 +24,25 @@ import { AuthService } from '../../auth/auth.service';
                             <picture>
                                 <img src="https://migoassetsprd.blob.core.windows.net/customers/migo/public/logo.webp" alt="Skandia Logo" class="w-48 mx-auto mb-3" />
                             </picture>
-                            <div class="text-surface-900 dark:text-surface-0 text-3xl font-medium mb-4">Skandia Fiduciaria</div>
-                            <span class="text-muted-color font-medium">Login para continuar</span>
+                            <div class="skandia-h2 mb-4">Skandia Fiduciaria</div>
+                            <span class="skandia-body2">Login para continuar</span>
                         </div>
 
                         <div>
                             <div class="mb-8">
-                                <p class="text-surface-700 dark:text-surface-100 mb-6">
+                                <p class="skandia-body1 mb-6">
                                     Inicie sesión con su cuenta de Microsoft para acceder al valorador de facturas.
                                 </p>
-                                <p-button 
+                                <p-button
+                                    styleClass="skandia-button-primary w-full"
                                     label="Iniciar sesión con Microsoft" 
                                     icon="pi pi-microsoft" 
-                                    styleClass="w-full" 
                                     (onClick)="loginWithAzure()"
                                     [loading]="isLoading">
                                 </p-button>
                             </div>
                             @if(errorMessage) {
-                            <div class="text-red-500 text-center mt-4">
+                            <div class="skandia-body2 text-center mt-4" style="color: #dc2626;">
                                 {{ errorMessage }}
                             </div>
                             }

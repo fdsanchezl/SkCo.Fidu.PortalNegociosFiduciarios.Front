@@ -9,6 +9,10 @@ import { RevenueStreamWidget } from './components/revenuestreamwidget';
     selector: 'app-dashboard',
     imports: [StatsWidget, RecentSalesWidget, BestSellingWidget, RevenueStreamWidget, NotificationsWidget],
     template: `
+        <div class="skandia-h1 mb-8">Dashboard</div>
+        <p class="skandia-body1 mb-6" style="color: var(--skandia-text-secondary);">
+            Bienvenido al panel de control de Skandia Fiduciaria
+        </p>
         <div class="grid grid-cols-12 gap-8">
             <app-stats-widget class="contents" />
             <div class="col-span-12 xl:col-span-6">

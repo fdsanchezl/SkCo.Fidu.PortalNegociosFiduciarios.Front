@@ -20,6 +20,7 @@ import { AuthService } from '../../auth/auth.service';
                 <picture>
                     <img src="https://migoassetsprd.blob.core.windows.net/customers/migo/public/logo.webp" alt="Skandia Logo" class="w-24 mx-auto mb-3" />
                 </picture>
+                <span class="skandia-h4">Skandia Fiduciaria</span>
             </a>
         </div>
 
@@ -52,19 +53,19 @@ import { AuthService } from '../../auth/auth.service';
                 <div class="layout-topbar-menu-content">
                     <button type="button" class="layout-topbar-action">
                         <i class="pi pi-calendar"></i>
-                        <span>Calendar</span>
+                        <span class="skandia-body2">Calendario</span>
                     </button>
                     <button type="button" class="layout-topbar-action">
                         <i class="pi pi-inbox"></i>
-                        <span>Messages</span>
+                        <span class="skandia-body2">Mensajes</span>
                     </button>
                     <button type="button" class="layout-topbar-action" *ngIf="userAccount">
                         <i class="pi pi-user"></i>
-                        <span>{{ userAccount.name || userAccount.username }}</span>
+                        <span class="skandia-body2">{{ userAccount.name || userAccount.username }}</span>
                     </button>
                     <button type="button" class="layout-topbar-action" (click)="logout()">
                         <i class="pi pi-sign-out"></i>
-                        <span>Cerrar sesión</span>
+                        <span class="skandia-body2">Cerrar sesión</span>
                     </button>
                 </div>
             </div>
