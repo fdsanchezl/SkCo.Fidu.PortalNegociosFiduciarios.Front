@@ -17,24 +17,36 @@ import { AuthService } from '../../auth/auth.service';
     imports: [ButtonModule, CheckboxModule, InputTextModule, PasswordModule, FormsModule, RouterModule, RippleModule, AppFloatingConfigurator],
     template: `
         <app-floating-configurator />
-        <div class="bg-surface-50 dark:bg-surface-950 flex items-center justify-center min-h-screen min-w-screen overflow-hidden">
+        <div class="flex items-center justify-center min-h-screen min-w-screen overflow-hidden" style="background-color: var(--skandia-gray-12);">
             <div class="flex flex-col items-center justify-center">
-                    <div class="w-full bg-surface-0 dark:bg-surface-900 py-20 px-8 sm:px-20" style="border-radius: 20px">
+                    <div class="w-full py-20 px-8 sm:px-20 skandia-card" style="background-color: var(--skandia-surface-primary); border-radius: var(--skandia-border-radius-xl); box-shadow: var(--skandia-shadow-medium); border: 1px solid var(--skandia-gray-10); max-width: 500px;">
                         <div class="text-center mb-8">
                             <picture>
                                 <img src="https://migoassetsprd.blob.core.windows.net/customers/migo/public/logo.webp" alt="Skandia Logo" class="w-48 mx-auto mb-3" />
                             </picture>
-                            <div class="skandia-h2 mb-4">Skandia Fiduciaria</div>
-                            <span class="skandia-body2">Login para continuar</span>
+                            <div class="skandia-h2 mb-4" style="color: var(--skandia-text-primary);">Skandia Fiduciaria</div>
+                            <span class="skandia-body2" style="color: var(--skandia-text-secondary);">Login para continuar</span>
                         </div>
 
                         <div>
                             <div class="mb-8">
-                                <p class="skandia-body1 mb-6">
+                                <p class="skandia-body1 mb-6" style="color: var(--skandia-text-primary);">
                                     Inicie sesión con su cuenta de Microsoft para acceder al valorador de facturas.
                                 </p>
                                 <p-button
-                                    styleClass="skandia-button-primary w-full"
+                                    styleClass="w-full"
+                                    [style]="{ 
+                                        'background': 'var(--skandia-gradient-green)', 
+                                        'color': 'var(--skandia-white)', 
+                                        'border': 'none', 
+                                        'border-radius': 'var(--skandia-border-radius-md)', 
+                                        'padding': 'var(--skandia-spacing-md) var(--skandia-spacing-lg)', 
+                                        'font-family': 'var(--skandia-font-body)', 
+                                        'font-weight': '500', 
+                                        'font-size': 'var(--skandia-body1-size)', 
+                                        'box-shadow': 'var(--skandia-shadow-subtle)', 
+                                        'transition': 'all var(--skandia-transition-fast)' 
+                                    }"
                                     label="Iniciar sesión con Microsoft" 
                                     icon="pi pi-microsoft" 
                                     (onClick)="loginWithAzure()"
@@ -42,7 +54,7 @@ import { AuthService } from '../../auth/auth.service';
                                 </p-button>
                             </div>
                             @if(errorMessage) {
-                            <div class="skandia-body2 text-center mt-4" style="color: #dc2626;">
+                            <div class="skandia-body2 text-center mt-4 skandia-alert" style="background-color: rgba(220, 38, 38, 0.1); border-left: 4px solid #dc2626; color: #dc2626; padding: var(--skandia-spacing-sm); border-radius: var(--skandia-border-radius-sm);">
                                 {{ errorMessage }}
                             </div>
                             }
