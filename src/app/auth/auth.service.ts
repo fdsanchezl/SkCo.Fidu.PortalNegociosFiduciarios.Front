@@ -1,20 +1,28 @@
 import { Injectable } from '@angular/core';
 import { AccountInfo } from '@azure/msal-browser';
+import { BehaviorSubject, Observable, ReplaySubject, from, of } from 'rxjs';
+import { catchError, switchMap } from 'rxjs/operators';
 import { msalInstance } from '../msal.config';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
-    
+    private initialized$ = new ReplaySubject<void>(1);
+    private isAuthenticatedSubject$ = new BehaviorSubject<boolean>(false);
+    public isAuthenticated$ = this.isAuthenticatedSubject$.asObservable();
+
     async initialize(): Promise<void> {
-        await msalInstance.initialize();
-        
-        const result = await msalInstance.handleRedirectPromise();
-        
+        await msalInstance.initialize(); // Then initialize
+
+        const result = await msalInstance.handleRedirectPromise(); // Handle redirect first
+
         if (result?.account) {
             msalInstance.setActiveAccount(result.account);
         }
+        this.updateAuthenticationStatus();
+        this.initialized$.next();
+        this.initialized$.complete();
     }
 
     login(): void {
@@ -24,6 +32,7 @@ export class AuthService {
     }
 
     logout(): void {
+        this.isAuthenticatedSubject$.next(false);
         msalInstance.logoutRedirect();
     }
 
@@ -31,37 +40,39 @@ export class AuthService {
         return msalInstance.getActiveAccount();
     }
 
-    isAuthenticated(): boolean {
-        return !!msalInstance.getActiveAccount();
+    private updateAuthenticationStatus(): void {
+        this.isAuthenticatedSubject$.next(!!this.getActiveAccount());
     }
 
-    async getAccessToken(): Promise<string | null> {
+    isAuthenticated(): boolean {
+        return this.isAuthenticatedSubject$.value;
+    }
+
+    isInitialized(): Observable<void> {
+        return this.initialized$.asObservable();
+    }
+
+    getAccessToken(): Observable<string | null> {
         const account = msalInstance.getActiveAccount();
-        
+
         if (!account) {
-            return null;
+            return of(null);
         }
 
-        try {
-            const response = await msalInstance.acquireTokenSilent({
-                scopes: ['api://e1184aad-3d07-49e7-a36a-e96f5ba390f7/nuevoscope'],
-                account: account
-            });
-            
-            return response.accessToken;
-        } catch (error) {
-            console.error('Error acquiring token silently:', error);
-            // If silent token acquisition fails, try interactive
-            try {
-                const response = await msalInstance.acquireTokenRedirect({
-                    scopes: ['api://e1184aad-3d07-49e7-a36a-e96f5ba390f7/nuevoscope'],
-                    account: account
-                });
-                return response.accessToken;
-            } catch (interactiveError) {
-                console.error('Error acquiring token interactively:', interactiveError);
-                return null;
-            }
-        }
+        const silentRequest = {
+            scopes: ['api://e1184aad-3d07-49e7-a36a-e96f5ba390f7/nuevoscope'],
+            account: account
+        };
+
+        return from(msalInstance.acquireTokenSilent(silentRequest)).pipe(
+            switchMap(response => of(response.accessToken)),
+            catchError(error => {
+                console.error('Error acquiring token silently:', error);
+                // Si la adquisición silenciosa falla, no intentamos la interactiva aquí,
+                // ya que eso debería ser manejado por un interceptor o un guard.
+                // Devolver null para que el llamador decida qué hacer.
+                return of(null);
+            })
+        );
     }
 }

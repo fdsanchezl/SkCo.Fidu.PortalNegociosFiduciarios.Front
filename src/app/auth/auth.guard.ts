@@ -1,24 +1,23 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
-import { msalInstance } from '../msal.config';
+import { Observable } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
+import { AuthService } from './auth.service';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-    constructor(private router: Router) {}
+    constructor(private authService: AuthService, private router: Router) {}
 
-    canActivate(): boolean {
-        const account = msalInstance.getActiveAccount();
-        
-        if (account) {
-            return true;
-        } else {
-            // Redirect to login if not authenticated
-            msalInstance.loginRedirect({
-                scopes: ['api://e1184aad-3d07-49e7-a36a-e96f5ba390f7/nuevoscope']
-            });
-            return false;
-        }
+    canActivate(): Observable<boolean> {
+        return this.authService.isAuthenticated$.pipe(
+            tap(isAuthenticated => {
+                if (!isAuthenticated) {
+                    this.authService.login();
+                }
+            }),
+            map(isAuthenticated => isAuthenticated)
+        );
     }
 }
