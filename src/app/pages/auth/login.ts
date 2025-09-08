@@ -36,7 +36,7 @@ import { AuthService } from '../../auth/auth.service';
                                 <p-button
                                     styleClass="w-full"
                                     [style]="{ 
-                                        'background': 'var(--skandia-green)', 
+                                        'background-color': 'var(--skandia-green)', 
                                         'color': 'var(--skandia-white)', 
                                         'border': 'none', 
                                         'border-radius': 'var(--skandia-border-radius-md)', 

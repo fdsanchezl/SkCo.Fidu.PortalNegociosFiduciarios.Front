@@ -245,7 +245,7 @@ h6, .skandia-h6 {
 }
 
 .skandia-button-primary {
-  background: var(--skandia-green);
+  background-color: var(--skandia-green);
   color: var(--skandia-white);
   border: none;
   border-radius: var(--skandia-border-radius-md);
@@ -259,6 +259,7 @@ h6, .skandia-h6 {
 }
 
 .skandia-button-primary:hover {
+  background-color: var(--skandia-gray-2);
   transform: translateY(-2px);
   box-shadow: var(--skandia-shadow-medium);
 }
@@ -412,14 +413,14 @@ body {
 }
 
 .skandia-nav-item.active {
-  background: var(--skandia-green);
+  background-color: var(--skandia-green);
   color: var(--skandia-white);
   box-shadow: var(--skandia-shadow-small);
 }
 
 /* 🎯 Badges y tags */
 .skandia-badge {
-  background: var(--skandia-green);
+  background-color: var(--skandia-green);
   color: var(--skandia-white);
   font-family: var(--skandia-font-body);
   font-size: var(--skandia-body3-size);
@@ -430,11 +431,11 @@ body {
 }
 
 .skandia-badge.orange {
-  background: var(--skandia-orange);
+  background-color: var(--skandia-orange);
 }
 
 .skandia-badge.blue {
-  background: var(--skandia-blue);
+  background-color: var(--skandia-blue);
 }
 
 /* 🎯 Formularios */

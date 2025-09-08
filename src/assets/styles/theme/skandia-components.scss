@@ -5,7 +5,7 @@
 
 /* 🎯 Botones personalizados */
 .p-button.skandia-primary {
-  background: var(--skandia-gradient-green);
+  background-color: var(--skandia-green);
   border: none;
   color: var(--skandia-white);
   font-family: var(--skandia-font-body);
@@ -16,6 +16,7 @@
 }
 
 .p-button.skandia-primary:hover {
+  background-color: var(--skandia-gray-2);
   transform: translateY(-2px);
   box-shadow: var(--skandia-shadow-medium);
 }
@@ -64,7 +65,7 @@
 }
 
 .p-datatable.skandia-table .p-datatable-header {
-  background: var(--skandia-gradient-green);
+  background-color: var(--skandia-green);
   color: var(--skandia-white);
   font-family: var(--skandia-font-heading);
   font-weight: 600;
@@ -99,7 +100,7 @@
 }
 
 .p-dialog.skandia-modal .p-dialog-header {
-  background: var(--skandia-gradient-green);
+  background-color: var(--skandia-green);
   color: var(--skandia-white);
   font-family: var(--skandia-font-heading);
   font-weight: 600;
@@ -108,7 +109,7 @@
 
 /* 🎯 Tarjetas personalizadas */
 .skandia-card-primary {
-  background: var(--skandia-gradient-green);
+  background-color: var(--skandia-green);
   color: var(--skandia-white);
   border-radius: var(--skandia-border-radius-lg);
   padding: var(--skandia-spacing-lg);
@@ -153,14 +154,14 @@
 }
 
 .skandia-nav-item.active {
-  background: var(--skandia-gradient-green);
+  background-color: var(--skandia-green);
   color: var(--skandia-white);
   box-shadow: var(--skandia-shadow-small);
 }
 
 /* 🎯 Badges y tags */
 .skandia-badge {
-  background: var(--skandia-gradient-green);
+  background-color: var(--skandia-green);
   color: var(--skandia-white);
   font-family: var(--skandia-font-body);
   font-size: var(--skandia-body3-size);
@@ -171,11 +172,11 @@
 }
 
 .skandia-badge.orange {
-  background: var(--skandia-gradient-orange);
+  background-color: var(--skandia-orange);
 }
 
 .skandia-badge.blue {
-  background: var(--skandia-gradient-blue);
+  background-color: var(--skandia-blue);
 }
 
 /* 🎯 Formularios */
