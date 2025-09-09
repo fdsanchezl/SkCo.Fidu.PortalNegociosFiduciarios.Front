@@ -25,7 +25,7 @@ export class AppMenu {
                 items: [
                     { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
                     { label: 'Valorador de facturas', icon: 'pi pi-fw pi-file', routerLink: ['/pages/invoices-valuator'] },
-                    { label: 'Aprobaciones', icon: 'pi pi-fw pi-check-square', routerLink: ['/process-view'] },
+                    { label: 'Aprobaciones', icon: 'pi pi-fw pi-check-square', routerLink: ['/pages/process-view'] },
                 ],
             },
             // {
