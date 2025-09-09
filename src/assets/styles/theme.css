@@ -317,7 +317,7 @@ body {
 
 /* Sobrescribir variables de PrimeNG con colores de Skandia */
 :root {
-  --p-primary-color: var(--skandia-green);
+  --p-primary-color: var(--skandia-green) !important;
   --p-primary-contrast-color: var(--skandia-white);
   --p-surface-0: var(--skandia-white);
   --p-surface-50: var(--skandia-gray-12);
@@ -397,7 +397,7 @@ body {
 
 /* 🎯 Navegación con estilo Skandia */
 .skandia-nav-item {
-  font-family: var(--skandia-font-body);
+  font-family: var(--skandia-font-heading);
   font-weight: 500;
   color: var(--skandia-text-primary);
   padding: var(--skandia-spacing-sm) var(--skandia-spacing-md);
@@ -422,7 +422,7 @@ body {
 .skandia-badge {
   background-color: var(--skandia-green);
   color: var(--skandia-white);
-  font-family: var(--skandia-font-body);
+  font-family: var(--skandia-font-heading);
   font-size: var(--skandia-body3-size);
   font-weight: 600;
   padding: var(--skandia-spacing-xs) var(--skandia-spacing-sm);

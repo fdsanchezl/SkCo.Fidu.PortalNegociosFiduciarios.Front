@@ -21,7 +21,6 @@ import { AuthService } from '../../auth/auth.service';
                 <picture>
                     <img src="https://migoassetsprd.blob.core.windows.net/customers/migo/public/logo.webp" alt="Skandia Logo" class="w-24 mx-auto mb-3" />
                 </picture>
-                <span class="skandia-h4">Skandia Fiduciaria</span>
             </a>
         </div>
 
