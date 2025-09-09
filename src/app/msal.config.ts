@@ -5,7 +5,7 @@ export const msalConfig: Configuration = {
   auth: {
     clientId: 'e1184aad-3d07-49e7-a36a-e96f5ba390f7',
     authority: 'https://login.microsoftonline.com/08271f42-81ef-45d6-81ac-49776c4be615',
-    redirectUri: 'https://skcofiduvaloradorfacturasangular.azurewebsites.net',
+    redirectUri: 'http://localhost:4200/',
   },
   cache: {
     cacheLocation: 'localStorage',

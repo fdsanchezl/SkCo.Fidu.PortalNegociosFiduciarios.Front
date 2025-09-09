@@ -1,0 +1,31 @@
+/*
+  Este archivo contendrá los estilos para componentes personalizados o
+  sobrescritura de estilos de librerías de terceros como PrimeNG.
+*/
+
+.sk-button-primary .p-button {
+    background: var(--skandia-green);
+    color: var(--skandia-white);
+    border: none;
+    border-radius: var(--skandia-border-radius-md);
+    padding: var(--skandia-spacing-md) var(--skandia-spacing-lg);
+    font-family: var(--skandia-font-body);
+    font-weight: 500;
+    box-shadow: var(--skandia-shadow-subtle);
+    transition: all var(--skandia-transition-fast);
+}
+
+.sk-login-card {
+    background-color: var(--skandia-surface-primary);
+    border-radius: var(--skandia-border-radius-xl);
+    box-shadow: var(--skandia-shadow-medium);
+    border: 1px solid var(--skandia-gray-10);
+}
+
+.sk-alert-error {
+    background-color: rgba(220, 38, 38, 0.1);
+    border-left: 4px solid #dc2626;
+    color: #dc2626;
+    padding: var(--skandia-spacing-sm);
+    border-radius: var(--skandia-border-radius-sm);
+}

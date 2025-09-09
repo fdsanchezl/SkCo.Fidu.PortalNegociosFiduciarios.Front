@@ -1,28 +1,50 @@
 import { Injectable } from '@angular/core';
 import { AccountInfo } from '@azure/msal-browser';
-import { BehaviorSubject, Observable, ReplaySubject, from, of } from 'rxjs';
-import { catchError, switchMap } from 'rxjs/operators';
+import { BehaviorSubject, Observable, ReplaySubject, from, of, forkJoin, lastValueFrom } from 'rxjs';
+import { catchError, switchMap, tap } from 'rxjs/operators';
 import { msalInstance } from '../msal.config';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
-    private initialized$ = new ReplaySubject<void>(1);
+    private initialized$ = new ReplaySubject<number>(1);
     private isAuthenticatedSubject$ = new BehaviorSubject<boolean>(false);
     public isAuthenticated$ = this.isAuthenticatedSubject$.asObservable();
 
-    async initialize(): Promise<void> {
-        await msalInstance.initialize(); // Then initialize
+    initialize(): Promise<any> {
+        console.log('[AuthService] initialize: Starting MSAL initialization process.');
+        // Cambiamos a un flujo secuencial para garantizar la estabilidad.
+        // 1. Primero, inicializamos MSAL.
+        const init$ = from(msalInstance.initialize()).pipe(
+            // 2. Una vez inicializado, procesamos la respuesta de la redirección.
+            switchMap(() => {
+                console.log('[AuthService] initialize: MSAL initialized. Now handling redirect promise.');
+                return from(msalInstance.handleRedirectPromise());
+            }),
+            tap(result => {
+                console.log('[AuthService] initialize: handleRedirectPromise completed. Result:', result);
+                if (result?.account) {
+                    console.log('[AuthService] initialize: Account found in redirect result. Setting active account.');
+                    msalInstance.setActiveAccount(result.account);
+                }
+                this.updateAuthenticationStatus();
+                // 3. Notificamos que todo el proceso ha terminado.
+                console.log('[AuthService] initialize: Emitting initialized signal (1).');
+                this.initialized$.next(1);
+                this.initialized$.complete();
+            }),
+            catchError(error => {
+                console.error('[AuthService] initialize: CRITICAL ERROR during initialization.', error);
+                // Si algo falla, aún notificamos para no bloquear la app.
+                console.log('[AuthService] initialize: Emitting initialized signal (1) despite error to unblock guards.');
+                this.initialized$.next(1);
+                this.initialized$.complete();
+                return of(null);
+            })
+        );
 
-        const result = await msalInstance.handleRedirectPromise(); // Handle redirect first
-
-        if (result?.account) {
-            msalInstance.setActiveAccount(result.account);
-        }
-        this.updateAuthenticationStatus();
-        this.initialized$.next();
-        this.initialized$.complete();
+        return lastValueFrom(init$);
     }
 
     login(): void {
@@ -48,7 +70,7 @@ export class AuthService {
         return this.isAuthenticatedSubject$.value;
     }
 
-    isInitialized(): Observable<void> {
+    isInitialized(): Observable<number> {
         return this.initialized$.asObservable();
     }
 

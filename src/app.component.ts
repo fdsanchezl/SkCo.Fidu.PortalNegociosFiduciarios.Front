@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
     template: `<router-outlet></router-outlet>`
 })
 export class AppComponent {
-    constructor(private authService: AuthService) {
-        this.authService.initialize();
+    constructor() {
+        console.log('[AppComponent] Constructor: Component is ready. Auth should be initialized by now.');
     }
 }

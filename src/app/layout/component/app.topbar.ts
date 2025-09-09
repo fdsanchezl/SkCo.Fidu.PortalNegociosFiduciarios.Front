@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { RouterModule } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { StyleClassModule } from 'primeng/styleclass';
 import { AppConfigurator } from './app.configurator';
@@ -72,19 +73,29 @@ import { AuthService } from '../../auth/auth.service';
         </div>
     </div>`
 })
-export class AppTopbar implements OnInit {
+export class AppTopbar implements OnInit, OnDestroy {
     items!: MenuItem[];
     userAccount: any = null;
+    private authSubscription: Subscription | undefined;
 
     constructor(
         public layoutService: LayoutService,
         private authService: AuthService
     ) { }
 
-    ngOnInit(): void {
-        this.userAccount = this.authService.getActiveAccount();
+    ngOnInit() {
+        this.authSubscription = this.authService.isAuthenticated$.subscribe(isAuthenticated => {
+            if (isAuthenticated) {
+                this.userAccount = this.authService.getActiveAccount();
+            } else {
+                this.userAccount = null;
+            }
+        });
     }
 
+    ngOnDestroy() {
+        this.authSubscription?.unsubscribe();
+    }
     toggleDarkMode() {
         this.layoutService.layoutConfig.update((state) => ({ ...state, darkTheme: !state.darkTheme }));
     }
