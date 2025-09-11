@@ -34,7 +34,7 @@ const mockObservable = new Observable((observer) => {
 @Component({
   selector: 'app-invoice-valuator',
   standalone: true,
-  imports: [TabsModule, Chart, ViewInvoice, AgGridAngular],
+  imports: [TabsModule, AgGridAngular],
   templateUrl: './invoice-valuator.html',
   styleUrl: './invoice-valuator.scss'
 })

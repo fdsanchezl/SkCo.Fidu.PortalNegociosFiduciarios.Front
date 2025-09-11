@@ -3,7 +3,7 @@
   sobrescritura de estilos de librerías de terceros como PrimeNG.
 */
 
-.sk-button-primary .p-button {
+.p-button.sk-button-primary {
     background: var(--skandia-green);
     color: var(--skandia-white);
     border: none;
@@ -13,6 +13,13 @@
     font-weight: 500;
     box-shadow: var(--skandia-shadow-subtle);
     transition: all var(--skandia-transition-fast);
+}
+
+.p-button.sk-button-primary:hover:not(:disabled) {
+    background: var(--skandia-green) !important; /* Mantiene el fondo original y fuerza la sobreescritura */
+    border: none !important; /* Asegura que no se añada un borde en hover */
+    filter: brightness(95%);
+    box-shadow: var(--skandia-shadow-medium);
 }
 
 .sk-login-card {

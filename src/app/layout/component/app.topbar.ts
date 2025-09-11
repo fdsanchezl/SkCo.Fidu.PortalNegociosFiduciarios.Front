@@ -59,10 +59,12 @@ import { AuthService } from '../../auth/auth.service';
                         <i class="pi pi-inbox"></i>
                         <span class="skandia-body2">Mensajes</span>
                     </button>
-                    <button type="button" class="layout-topbar-action" *ngIf="userAccount">
-                        <i class="pi pi-user"></i>
-                        <span class="skandia-body2">{{ userAccount.name || userAccount.username }}</span>
-                    </button>
+                    @if(userAccount) {
+                        <button type="button" class="layout-topbar-action">
+                            <i class="pi pi-user"></i>
+                            <span class="skandia-body2">{{ userAccount.name || userAccount.username }}</span>
+                        </button>
+                    }
                     <button type="button" class="layout-topbar-action" (click)="logout()">
                         <i class="pi pi-sign-out"></i>
                         <span class="skandia-body2">Cerrar sesión</span>
@@ -79,11 +81,11 @@ export class AppTopbar implements OnInit, OnDestroy {
 
     constructor(
         public layoutService: LayoutService,
-        private authService: AuthService
+        private readonly authService: AuthService
     ) { }
 
     ngOnInit() {
-        this.authSubscription = this.authService.isAuthenticated$.subscribe(isAuthenticated => {
+        this.authSubscription = this.authService.isAuthenticated$.subscribe((isAuthenticated:any)  => {
             if (isAuthenticated) {
                 this.userAccount = this.authService.getActiveAccount();
             } else {

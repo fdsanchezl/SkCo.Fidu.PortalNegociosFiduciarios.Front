@@ -74,6 +74,7 @@ export class AuthService {
         return this.initialized$.asObservable();
     }
 
+
     getAccessToken(): Observable<string | null> {
         const account = msalInstance.getActiveAccount();
 
@@ -97,4 +98,24 @@ export class AuthService {
             })
         );
     }
+
+    /**
+     * Verifica si el usuario logueado tiene al menos uno de los roles requeridos.
+     * @param requiredRoles Array de roles que se quieren comprobar.
+     * @returns `true` si el usuario tiene al menos un rol coincidente, de lo contrario `false`.
+     */
+    public hasRole(requiredRoles: string[]): boolean {
+        const account = this.getActiveAccount();
+        if (!account || !account.idTokenClaims) {
+          return false;
+        }
+    
+        const userRoles = account.idTokenClaims['roles'] as string[] | undefined;
+        if (!userRoles || userRoles.length === 0) {
+          return false;
+        }
+    
+        // Comprueba si algún rol del usuario está en la lista de roles requeridos.
+        return requiredRoles.some(role => userRoles.includes(role));
+      }
 }

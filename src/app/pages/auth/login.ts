@@ -17,40 +17,36 @@ import { AuthService } from '../../auth/auth.service';
     imports: [ButtonModule, CheckboxModule, InputTextModule, PasswordModule, FormsModule, RouterModule, RippleModule, AppFloatingConfigurator],
     template: `
         <app-floating-configurator />
-        <div class="flex items-center justify-center min-h-screen min-w-screen overflow-hidden" style="background-color: var(--skandia-gray-12);">
-            <div class="flex flex-col items-center justify-center p-4">
-                    <div class="w-full py-20 px-8 sm:px-20 sk-login-card" style="max-width: 500px;">
-                        <div class="text-center mb-8">
-                            <picture>
-                                <img src="https://migoassetsprd.blob.core.windows.net/customers/migo/public/logo.webp" alt="Skandia Logo" class="w-48 mx-auto mb-3" />
-                            </picture>
-                            <div class="skandia-h2 mb-4 text-primary">Skandia Fiduciaria</div>
-                            <span class="skandia-body2 text-secondary">Login para continuar</span>
-                        </div>
-
-                        <div>
-                            <div class="mb-8">
-                                <p class="skandia-body1 mb-6 text-primary">
-                                    Inicie sesión con su cuenta de Microsoft para acceder al valorador de facturas.
-                                </p>
-                                <p-button
-                                    styleClass="w-full sk-button-primary"
-                                    label="Iniciar sesión con Microsoft" 
-                                    icon="pi pi-microsoft" 
-                                    (onClick)="loginWithAzure()"
-                                    [loading]="isLoading">
-                                </p-button>
-                            </div>
-                            @if(errorMessage) {
-                            <div class="skandia-body2 text-center mt-4 sk-alert-error">
-                                {{ errorMessage }}
-                            </div>
-                            }
-
-                        </div>
+        <div class="flex items-center justify-center min-h-screen min-w-screen overflow-hidden bg-surface-50 dark:bg-surface-950">
+            <div class="card w-full max-w-md">
+                <div class="p-8">
+                    <div class="text-center mb-8">
+                        <picture>
+                            <img src="https://migoassetsprd.blob.core.windows.net/customers/migo/public/logo.webp" alt="Skandia Logo" class="w-48 mx-auto mb-3" />
+                        </picture>
+                        <div class="text-2xl font-bold mb-1 text-surface-900 dark:text-surface-0">Skandia Fiduciaria</div>
+                        <span class="text-muted-color">Login para continuar</span>
                     </div>
+                    <div class="mb-6">
+                        <p class="text-muted-color mb-6 text-center">
+                            Inicie sesión con su cuenta de Microsoft para acceder al portal.
+                        </p>
+                        <p-button
+                            styleClass="w-full sk-button-primary"
+                            label="Iniciar sesión con Microsoft" 
+                            icon="pi pi-microsoft" 
+                            (onClick)="loginWithAzure()"
+                            [loading]="isLoading">
+                        </p-button>
+                    </div>
+                    @if(errorMessage) {
+                    <div class="text-center mt-4 sk-alert-error">
+                        {{ errorMessage }}
+                    </div>
+                    }
+                    </div>
+                </div>
             </div>
-        </div>
     `
 })
 export class Login implements OnInit, OnDestroy {
